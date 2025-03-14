@@ -1,0 +1,248 @@
+version: 4.2.19
+session: 67d351ed52f23900c465c2fa
+steps:
+  - prompt: >-
+      input email ${TD_TEST_USERNAME} and password ${TD_TEST_PASSWORD} and continue
+    commands:
+      - command: hover-text
+        text: Email
+        description: email input field
+        action: click
+      - command: type
+        text: ${TD_TEST_USERNAME}
+      - command: hover-text
+        text: Password
+        description: password input field
+        action: click
+      - command: type
+        text: ${TD_TEST_PASSWORD}
+      - command: hover-text
+        text: Login
+        description: login button
+        action: click
+  - prompt: focus chrome and click view channels.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: View Channels
+        description: button to explore channels
+        action: click
+      - command: wait-for-text
+        text: Channels Overview
+  - prompt: >-
+      click 'View Details' for each channel shown. If necessary navigate back to
+      the 'channel overview' to continue.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: View Details
+        description: view details button for Wine & Dine channel
+        action: click
+      - command: wait
+        timeout: 3000
+      - command: press-keys
+        keys:
+          - command
+          - left
+      - command: hover-text
+        text: View Details
+        description: view details button for Grab & Go channel
+        action: click
+      - command: wait
+        timeout: 3000
+      - command: press-keys
+        keys:
+          - command
+          - left
+      - command: hover-text
+        text: View Details
+        description: view details button for Family Fun channel
+        action: click
+      - command: wait
+        timeout: 3000
+      - command: press-keys
+        keys:
+          - command
+          - left
+  - prompt: navigate to the 'Digital Signage' nav item.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Digital Signage
+        description: navigation item for Digital Signage
+        action: click
+  - prompt: click the button that says 'Create Campaign' and click
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Create Campaign
+        description: button to create a campaign
+        action: click
+  - prompt: choose a random button that says 'Use Template' and click
+    commands:
+      - command: scroll-until-text
+        text: Use Template
+        direction: down
+        method: keyboard
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Use Template
+        description: button to use a template
+        action: click
+  - prompt: >-
+      fill in the items to make an advertisement
+      that is in context with the image shown in the template. Replace any text
+      that is present as a placeholder. Assert that the text displays on the image shown in the
+      preview
+    commands:
+      - command: if
+        condition: the active window contains the text "tag line"
+        then:
+          - command: hover-text
+            text: Tag Line
+            description: input field for tag line
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: Demo Time!
+          - command: hover-text
+            text: Heading
+            description: input field for heading
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: Ludden in the House
+          - command: hover-text
+            text: Description
+            description: input field for description
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: >-
+              Enjoy a variety of overpriced, Snap Kitchen freezer based meals!
+          - command: assert
+            expect: the text displays on the image shown in the preview
+        else:
+          - command: hover-text
+            text: Heading
+            description: input field for description
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: >-
+              You're WELCOME
+          - command: scroll-until-text
+            text: Monday
+            direction: down
+          - command: hover-text
+            text: Monday
+            description: input field for description
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: >-
+              24hrs
+          - command: scroll-until-text
+            text: Tuesday
+            direction: down
+          - command: hover-text
+            text: Tuesday
+            description: input field for description
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: >-
+              24hrs
+          - command: scroll-until-text
+            text: Wednesday
+            direction: down
+          - command: hover-text
+            text: Wednesday
+            description: input field for description
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: >-
+              24hrs
+          - command: scroll-until-text
+            text: Thursday
+            direction: down
+          - command: hover-text
+            text: Thursday
+            description: input field for description
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: >-
+              24hrs
+          - command: scroll-until-text
+            text: Friday
+            direction: down
+          - command: hover-text
+            text: Friday
+            description: input field for description
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: >-
+              24hrs
+          - command: scroll-until-text
+            text: Saturday
+            direction: down
+          - command: hover-text
+            text: Saturday
+            description: input field for description
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: >-
+              CLOSED
+          - command: scroll-until-text
+            text: Sunday
+            direction: down
+          - command: hover-text
+            text: Sunday
+            description: input field for description
+            action: click
+          - command: press-keys
+            keys:
+              - command
+              - a
+          - command: type
+            text: >-
+              Closed
