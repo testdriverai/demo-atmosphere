@@ -20,6 +20,16 @@ steps:
         text: Login
         description: login button
         action: click
+  - prompt: focus chrome and click "Never" save password
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Never
+        description: button to close password manager modal
+        action: click
+      - command: wait-for-text
+        text: Channels Overview
   - prompt: focus chrome and click view channels.
     commands:
       - command: focus-application
@@ -44,7 +54,7 @@ steps:
         timeout: 3000
       - command: press-keys
         keys:
-          - command
+          - alt
           - left
       - command: hover-text
         text: View Details
@@ -54,7 +64,7 @@ steps:
         timeout: 3000
       - command: press-keys
         keys:
-          - command
+          - alt
           - left
       - command: hover-text
         text: View Details
@@ -64,7 +74,7 @@ steps:
         timeout: 3000
       - command: press-keys
         keys:
-          - command
+          - alt
           - left
   - prompt: navigate to the 'Digital Signage' nav item.
     commands:
@@ -109,7 +119,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: Demo Time!
@@ -119,7 +129,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: Ludden in the House
@@ -129,7 +139,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: >-
@@ -143,7 +153,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: >-
@@ -157,7 +167,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: >-
@@ -171,7 +181,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: >-
@@ -185,7 +195,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: >-
@@ -199,7 +209,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: >-
@@ -213,7 +223,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: >-
@@ -227,7 +237,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: >-
@@ -241,7 +251,7 @@ steps:
             action: click
           - command: press-keys
             keys:
-              - command
+              - control
               - a
           - command: type
             text: >-
