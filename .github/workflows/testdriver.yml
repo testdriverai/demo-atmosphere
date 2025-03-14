@@ -26,5 +26,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
           WEBSITE_URL: "https://admin.atmosphere.tv" # Define the website URL here
-          TD_TEST_USERNAME: ${{ secrets.TD_TEST_USERNAME }} # repo vars not env vars
-          TD_TEST_PASSWORD: ${{ secrets.TD_TEST_PASSWORD }}
+          TD_TEST_USERNAME: ${{ secrets.TD_TEST_USERNAME }} #repo var not env var or repo secret
+          TD_TEST_PASSWORD: ${{ secrets.TD_TEST_PASSWORD }} #repo var not env var or repo secret
